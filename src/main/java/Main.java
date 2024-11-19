@@ -5,7 +5,7 @@ public class Main {
      *
      * @param value1 first value
      * @param value2 second value
-     * @param action action to calculate
+     * @param action action to calculate only +, -, *, /
      */
     public static void calculator(double value1, double value2, String action) {
         double result = 0;
@@ -26,7 +26,7 @@ public class Main {
     }
 
     /**
-     *
+     * @author Strelnikova Juliana
      * @param args
      */
     public static void main(String[] args) {
