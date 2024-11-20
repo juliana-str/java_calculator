@@ -22,6 +22,10 @@ public class Main {
                 break;
             case "/":
                 result = value1 / value2;
+                break;
+            default:
+                System.out.println("Неверный выбор действия, попробуйте еще раз.");
+                return;
         }
         System.out.printf(String.format("Результат вычисления %.4f", result));
     }
