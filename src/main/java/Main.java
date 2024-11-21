@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     /**
@@ -9,7 +7,7 @@ public class Main {
      * @param action action to calculate only +, -, *, /
      */
     public static void calculator(double value1, double value2, String action) {
-        double result = 0;
+        double result;
         switch (action) {
             case "+":
                 result = value1 + value2;
@@ -33,14 +31,14 @@ public class Main {
     /**
      * @param words list of entered words
      */
-    public static void findMaxElement(List<String> words) {
-        String maxLenthWord = "";
-        for (String word : words) {
-            if (word.length() > maxLenthWord.length()) {
-                maxLenthWord = word;
+    public static void findMaxElement(List<String> words, int arrayLenth) {
+        words.sort(Comparator.comparingInt(String::length));
+        String maxLenthWord = words.get(arrayLenth-1);
+        for(String word: words){
+            if(word.length()==maxLenthWord.length()) {
+                System.out.println(word);
             }
         }
-        System.out.println(maxLenthWord);
     }
 
     /**
@@ -62,13 +60,13 @@ public class Main {
         } else {
             System.out.println("Введите число - размер массива слов.");
             int arrayLenth = scanner.nextInt();
-            List<String> words = new ArrayList<>();
+            ArrayList<String> words = new ArrayList<>();
             for (int i = 1; i <= arrayLenth; i++) {
                 System.out.println("Введите " + i + " слово.");
                 String word = scanner.next();
                 words.add(word);
             }
-            findMaxElement(words);
+            findMaxElement(words, arrayLenth);
         }
         scanner.close();
     }
